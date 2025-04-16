@@ -165,7 +165,7 @@ def AffineLoopFusion : Pass<"affine-loop-fusion"> {
                             "to fast memory space">,
     Option<"maximalFusion", "maximal", "bool", /*default=*/"false",
            "Enables maximal loop fusion">,
-    Option<"affineFusionMode", "mode", "enum FusionMode",
+    Option<"affineFusionMode", "mode", "enum affine::FusionMode",
            "mlir::affine::FusionMode::Greedy", "fusion mode to attempt",
            "llvm::cl::values(clEnumValN(mlir::affine::FusionMode::Greedy,"
            " \"greedy\", \"Perform greedy (both producer-consumer and sibling)  fusion\"), "

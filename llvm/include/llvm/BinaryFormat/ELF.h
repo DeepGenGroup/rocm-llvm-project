@@ -848,6 +848,11 @@ enum : unsigned {
   EF_AMDGPU_MACH_AMDGCN_FIRST = EF_AMDGPU_MACH_AMDGCN_GFX600,
   EF_AMDGPU_MACH_AMDGCN_LAST = EF_AMDGPU_MACH_AMDGCN_GFX9_4_GENERIC,
 
+
+  EF_AMDGPU_MACH_AMDGCN_GFX926        = 0x081,
+  EF_AMDGPU_MACH_AMDGCN_GFX928        = 0x083,
+  EF_AMDGPU_MACH_AMDGCN_GFX936        = 0x082,  
+
   // Indicates if the "xnack" target feature is enabled for all code contained
   // in the object.
   //

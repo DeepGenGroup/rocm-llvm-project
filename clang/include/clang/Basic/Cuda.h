@@ -125,6 +125,10 @@ enum class OffloadArch {
   GFX1034,
   GFX1035,
   GFX1036,
+  GFX926,
+  GFX928,
+  GFX936,
+  
   GFX11_GENERIC,
   GFX1100,
   GFX1101,

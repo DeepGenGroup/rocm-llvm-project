@@ -210,6 +210,9 @@ void NVPTXTargetInfo::getTargetDefines(const LangOptions &Opts,
       case OffloadArch::GFX909:
       case OffloadArch::GFX90a:
       case OffloadArch::GFX90c:
+      case OffloadArch::GFX926:
+      case OffloadArch::GFX928:
+      case OffloadArch::GFX936:
       case OffloadArch::GFX9_4_GENERIC:
       case OffloadArch::GFX942:
       case OffloadArch::GFX950:

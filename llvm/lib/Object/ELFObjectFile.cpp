@@ -611,6 +611,9 @@ StringRef ELFObjectFileBase::getAMDGPUCPUName() const {
     return "gfx11-generic";
   case ELF::EF_AMDGPU_MACH_AMDGCN_GFX12_GENERIC:
     return "gfx12-generic";
+  
+  case ELF::EF_AMDGPU_MACH_AMDGCN_GFX926 :
+    return "gfx926";
   default:
     llvm_unreachable("Unknown EF_AMDGPU_MACH value");
   }

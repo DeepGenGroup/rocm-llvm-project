@@ -1424,7 +1424,8 @@ template <class ELFT> Triple::ArchType ELFObjectFile<ELFT>::getArch() const {
     if (MACH >= ELF::EF_AMDGPU_MACH_AMDGCN_FIRST &&
         MACH <= ELF::EF_AMDGPU_MACH_AMDGCN_LAST)
       return Triple::amdgcn;
-
+    if (ELF::EF_AMDGPU_MACH_AMDGCN_GFX926 == MACH || ELF::EF_AMDGPU_MACH_AMDGCN_GFX928 == MACH || ELF::EF_AMDGPU_MACH_AMDGCN_GFX936 == MACH)
+      return Triple::amdgcn;
     return Triple::UnknownArch;
   }
 

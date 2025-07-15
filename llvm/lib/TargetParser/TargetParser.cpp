@@ -100,6 +100,7 @@ constexpr GPUInfo AMDGCNGPUs[] = {
     {{"gfx902"},    {"gfx902"},  GK_GFX902,  FEATURE_FAST_FMA_F32|FEATURE_FAST_DENORMAL_F32|FEATURE_XNACK},
     {{"gfx904"},    {"gfx904"},  GK_GFX904,  FEATURE_FAST_FMA_F32|FEATURE_FAST_DENORMAL_F32|FEATURE_XNACK},
     {{"gfx906"},    {"gfx906"},  GK_GFX906,  FEATURE_FAST_FMA_F32|FEATURE_FAST_DENORMAL_F32|FEATURE_XNACK|FEATURE_SRAMECC},
+    {{"gfx926"},    {"gfx926"},  GK_GFX926,  FEATURE_FAST_FMA_F32|FEATURE_FAST_DENORMAL_F32|FEATURE_XNACK|FEATURE_SRAMECC},
     {{"gfx908"},    {"gfx908"},  GK_GFX908,  FEATURE_FAST_FMA_F32|FEATURE_FAST_DENORMAL_F32|FEATURE_XNACK|FEATURE_SRAMECC},
     {{"gfx909"},    {"gfx909"},  GK_GFX909,  FEATURE_FAST_FMA_F32|FEATURE_FAST_DENORMAL_F32|FEATURE_XNACK},
     {{"gfx90a"},    {"gfx90a"},  GK_GFX90A,  FEATURE_FAST_FMA_F32|FEATURE_FAST_DENORMAL_F32|FEATURE_XNACK|FEATURE_SRAMECC},
@@ -254,6 +255,7 @@ AMDGPU::IsaVersion AMDGPU::getIsaVersion(StringRef GPU) {
   case GK_GFX902:  return {9, 0, 2};
   case GK_GFX904:  return {9, 0, 4};
   case GK_GFX906:  return {9, 0, 6};
+  case GK_GFX926:  return {9, 2, 6};
   case GK_GFX908:  return {9, 0, 8};
   case GK_GFX909:  return {9, 0, 9};
   case GK_GFX90A:  return {9, 0, 10};
@@ -551,6 +553,7 @@ void AMDGPU::fillAMDGPUFeatureMap(StringRef GPU, const Triple &T,
       Features["mai-insts"] = true;
       [[fallthrough]];
     case GK_GFX906:
+    case GK_GFX926:
       Features["dl-insts"] = true;
       Features["dot1-insts"] = true;
       Features["dot2-insts"] = true;

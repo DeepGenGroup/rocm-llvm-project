@@ -1565,6 +1565,17 @@ def FeatureISAVersion9_0_6 : FeatureSet<
      FeatureDot10Insts,
      FeatureSupportsSRAMECC])>;
 
+def FeatureISAVersion9_2_6 : FeatureSet<
+  !listconcat(FeatureISAVersion9_0_Consumer_Common.Features,
+    [HalfRate64Ops,
+     FeatureFmaMixInsts,
+     FeatureDLInsts,
+     FeatureDot1Insts,
+     FeatureDot2Insts,
+     FeatureDot7Insts,
+     FeatureDot10Insts,
+     FeatureSupportsSRAMECC])>;
+
 def FeatureISAVersion9_0_8 : FeatureSet<
   !listconcat(FeatureISAVersion9_0_MI_Common.Features,
     [FeatureGDS,
